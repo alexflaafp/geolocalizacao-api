@@ -1,5 +1,6 @@
 package com.infoafp.api.v1.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,13 +11,15 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.infoafp.core.property.GeolocalizacaoApiProperty;
 import com.infoafp.domain.model.Response;
 
 @RestController
 @RequestMapping(value = "/v1/geolocalizacao", produces = MediaType.APPLICATION_JSON_VALUE)
 public class GeolocalizacaoController {
 
-	private static final Object API_KEY = "AIzaSyAtWKlfJ6JCczn2g7IUELH4JEkExdAsDNM";
+	@Autowired
+	private GeolocalizacaoApiProperty geolocalizacaoApiProperty;
 	
 	@GetMapping()
 	public Response obterRota(@RequestParam String origem, @RequestParam String destino) {
@@ -24,7 +27,7 @@ public class GeolocalizacaoController {
 				.scheme("https")
 				.host("maps.googleapis.com")
 				.path("/maps/api/directions/json")
-				.queryParam("key", API_KEY)
+				.queryParam("key", geolocalizacaoApiProperty.getGMaps().getKey())
 				.queryParam("origin", origem)
 				.queryParam("destination", destino)
 				.queryParam("language", "pt")

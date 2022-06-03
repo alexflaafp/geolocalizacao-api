@@ -8,13 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@JsonPropertyOrder({"bounds", "copyrights", "legs"})
+@JsonPropertyOrder({"copyrights", "bounds", "legs"})
 public class Route {
 
-	@JsonProperty("bounds")
-	private Bounds bound;
 	@JsonProperty("copyrights")
 	private String copyright;
+	@JsonProperty("bounds")
+	private Bounds bound;
 	@JsonProperty("legs")
 	private Leg[] leg;
 	
