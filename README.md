@@ -1,39 +1,29 @@
 # geolocalizacao-api
 
-# Considerations
-   • The application is configured to run on port 8088
-   
-   • The application use an in memory DB - H2 Database
-   
-   • The application was developed using Spring Boot. This is a stand alone application where everything you need is embedded on it (Tomcat, DB, ...)
-   
-   • The application will populate the DB with 10000 records previously generated
+# Considerações
+   - A aplicação está configurada para rodar na porta 8099.
+   - A aplicação foi desenvolvida utilizando Spring Boot. Este é um aplicativo autônomo onde tudo que você precisa está embutido.
+   - Foi utilizada a API do Google Maps para obter a geolocalização (directions) criando uma rota, contendo uma "origem" e um "destino" como parâmetro.
 
-  
-o	https://github.com/hyalen-moreira/inauth/blob/master/src/main/java/us/hyalen/inauth/util/Utils.java
-•	I'm using the Google Maps API to get information from given coordinates
-o	https://github.com/hyalen-moreira/inauth/tree/master/src/main/java/us/hyalen/inauth/connection
-•	In case you prefer to clone the repository, build and run by yourself, instead of execute the .jar file, you will need a Google Maps API key
-o	To get a Google Maps API key
-	https://developers.google.com/maps/documentation/geocoding/get-api-key
-o	To set a key in the app
-	https://github.com/hyalen-moreira/inauth/blob/master/src/main/java/us/hyalen/inauth/connection/GoogleMapsApi.java
-To execute the app
-•	java -jar inauth-0.0.1-SNAPSHOT.jar
-•	I've sent the .jar file to your email
-To see the Java Code
-Clone the GitHub project https://github.com/hyalen-moreira/inauth.git
-To see the seed data
-https://github.com/hyalen-moreira/inauth/blob/master/src/main/resources/data-h2.sql
-To test the endpoints
-Once the application is running, open a browser of your choice and:
-•	To get all coordinates - GET
-o	http://localhost:8088/inauth/api/locations
-•	To get data from a specific coordinate - GET
-o	http://localhost:8088/inauth/api/locations/40.714224,-73.961452
-o	If the coordinate doens't exist in the DB, the app will return 404 - No Found
-o	Otherwise the application will access a Google Maps API and will return information about the coordinate
-•	To add a new coordinate - POST
-o	http://localhost:8088/inauth/api/locations
-o	Inform the latitude and longitude on body of the http post request
-o	{"latitude" : "42.714224", "longitude" : "-53.961452"}
+### Para testar os endpoints
+  - Quando o aplicativo estiver em execução, abra um navegador de sua escolha ou utilize o postman:
+    - Somente latitude e longitude (como ***destino*** e ***origem***):
+      - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,-43.198931982933686&origem=-22.803258699505523,-43.19535170838785
+    - Latitude e longitude para o ***destino*** e **valor textual** para a ***origem***:  
+      - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,%20-43.198931982933686&origem=Rua%20Capit%C3%A3o%20Aviador%20Enilton%20Franca
+
+# Parâmetros Obrigatórios
+   - destino: O código (ID) do local, endereço ou valor textual de latitude/longitude para o qual você deseja calcular as rotas. As opções para o parâmetro de destino são as mesmas do parâmetro de origem.
+   - origem: O código (ID) do local, endereço ou valor textual de latitude/longitude a partir do qual você deseja calcular as rotas.
+
+# Endpoints Existentes na API
+  1. Obter rota (latitude/longitude): **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=latitude,longitude`
+  2. Obter rota (latitude/longitude e valor textual): **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=valor textaul`
+
+# Tecnologias Utilizadas
+  - Google Maps API
+  - Java 8.x
+  - Maven 3.x
+  - Spring Framework 5.x
+  - Spring Boot 2.6.0
+  - Projeto Lombok
