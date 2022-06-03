@@ -24,8 +24,8 @@
 
 # Endpoints Existentes na API
   1. Obter rota: 
-   - Utilizandi latitude/longitude: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=latitude,longitude`
-   - Utilizando latitude/longitude e endereco: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=endereco`
+      - Utilizandi latitude/longitude: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=latitude,longitude`
+      - Utilizando latitude/longitude e endereco: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=endereco`
 
 # Tecnologias Utilizadas
   - Google Maps API
