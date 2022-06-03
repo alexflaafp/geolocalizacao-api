@@ -16,7 +16,7 @@
    - java -jar geolocalizacao-api-1.0.0.jar
 
 ### Para visualizar o código Java
-   - Clone the GitHub project https://github.com/hyalen-moreira/inauth.git
+   - Clone o projeto do GitHub https://github.com/alexflaafp/geolocalizacao-api.git
 
 # Parâmetros Obrigatórios
    - destino: O código (ID) do local, endereço ou valor textual de latitude/longitude para o qual você deseja calcular as rotas. As opções para o parâmetro de destino são as mesmas do parâmetro de origem.
