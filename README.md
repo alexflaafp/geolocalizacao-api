@@ -19,12 +19,12 @@
       - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,%20-43.198931982933686&origem=Rua%20Capit%C3%A3o%20Aviador%20Enilton%20Franca
 
 # Parâmetros Obrigatórios
-   - destino: O código (ID) do local, endereço ou valor textual de latitude/longitude para o qual você deseja calcular as rotas. As opções para o parâmetro de destino são as mesmas do parâmetro de origem.
-   - origem: O código (ID) do local, endereço ou valor textual de latitude/longitude a partir do qual você deseja calcular as rotas.
+   - **destino**: O código (ID) do local, endereço ou valor textual de latitude/longitude para o qual você deseja calcular as rotas. As opções para o parâmetro de destino são as mesmas do parâmetro de origem.
+   - **origem**: O código (ID) do local, endereço ou valor textual de latitude/longitude a partir do qual você deseja calcular as rotas.
 
 # Endpoints Existentes na API
   1. Obter rota: 
-      - Utilizandi latitude/longitude: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=latitude,longitude`
+      - Utilizando latitude/longitude: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=latitude,longitude`
       - Utilizando latitude/longitude e endereco: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=endereco`
   > NOTA: O valor dos parâmetros **código (ID) do local, endereço ou valor textual de latitude/longitude** podem ser inseridos tanto para o parâmetro ***destino*** quanto para ***origem***, não tendo nenhum tipo de restrição quanto a ordem de utilização do valor dos parâmetros.
 
