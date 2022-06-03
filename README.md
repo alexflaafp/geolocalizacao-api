@@ -23,8 +23,9 @@
    - origem: O código (ID) do local, endereço ou valor textual de latitude/longitude a partir do qual você deseja calcular as rotas.
 
 # Endpoints Existentes na API
-  1. Obter rota (latitude/longitude): **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=latitude,longitude`
-  2. Obter rota (latitude/longitude e endereco): **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=endereco`
+  1. Obter rota: 
+   - Utilizandi latitude/longitude: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=latitude,longitude`
+   - Utilizando latitude/longitude e endereco: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=endereco`
 
 # Tecnologias Utilizadas
   - Google Maps API
