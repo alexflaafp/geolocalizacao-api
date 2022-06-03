@@ -3,13 +3,13 @@
 # Considerações
    - A aplicação está configurada para rodar na porta 8099.
    - A aplicação foi desenvolvida utilizando Spring Boot. Este é um aplicativo autônomo onde tudo que você precisa está embutido.
-   - Foi utilizada a API do Google Maps para obter a geolocalização (directions) criando uma rota, contendo uma "origem" e um "destino" como parâmetro.
+   - Foi utilizada a API do Google Maps para obter a geolocalização (directions) criando uma rota, contendo uma **origem** e um **destino** como parâmetro.
 
 ### Para testar os endpoints
   - Quando o aplicativo estiver em execução, abra um navegador de sua escolha ou utilize o postman:
     - Somente latitude e longitude (como ***destino*** e ***origem***):
       - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,-43.198931982933686&origem=-22.803258699505523,-43.19535170838785
-    - Latitude e longitude para o ***destino*** e **valor textual** para a ***origem***:  
+    - Latitude e longitude para o ***destino*** e **endereço** para a ***origem***:  
       - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,%20-43.198931982933686&origem=Rua%20Capit%C3%A3o%20Aviador%20Enilton%20Franca
 
 # Parâmetros Obrigatórios
@@ -18,7 +18,7 @@
 
 # Endpoints Existentes na API
   1. Obter rota (latitude/longitude): **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=latitude,longitude`
-  2. Obter rota (latitude/longitude e valor textual): **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=valor textaul`
+  2. Obter rota (latitude/longitude e endereco): **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=endereco`
 
 # Tecnologias Utilizadas
   - Google Maps API
