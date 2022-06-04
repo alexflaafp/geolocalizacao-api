@@ -12,6 +12,8 @@ import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.infoafp.core.property.GeolocalizacaoApiProperty;
+import com.infoafp.domain.exception.DestinoInexistenteException;
+import com.infoafp.domain.exception.OrigemInexistenteException;
 import com.infoafp.domain.model.Response;
 
 @RestController
@@ -23,6 +25,9 @@ public class GeolocalizacaoController {
 	
 	@GetMapping()
 	public Response obterRota(@RequestParam String origem, @RequestParam String destino) {
+		
+		exceptionHandler(origem, destino);
+		
 		UriComponents uri = UriComponentsBuilder.newInstance()
 				.scheme("https")
 				.host("maps.googleapis.com")
@@ -37,6 +42,16 @@ public class GeolocalizacaoController {
 		ResponseEntity<Response> response = new RestTemplate().getForEntity(uri.toString(), Response.class);
 		
 		return response.getBody();
+	}
+	
+	private void exceptionHandler(String origem, String destino) {
+		if(origem.isBlank()) {
+			throw new OrigemInexistenteException(String.format("Informe a origem para que seja gerada a rota"));
+		}
+		
+		if(destino.isBlank()) {
+			throw new DestinoInexistenteException(String.format("Informe o destino para que seja gerada a rota"));
+		}
 	}
 	
 }
