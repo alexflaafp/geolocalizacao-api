@@ -16,7 +16,7 @@
     - Somente latitude e longitude como ***destino*** e ***origem***:
       - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,-43.198931982933686&origem=-22.803258699505523,-43.19535170838785
     - Latitude e longitude para o ***destino*** e **endereço** para a ***origem***:  
-      - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,%20-43.198931982933686&origem=Rua%20Capit%C3%A3o%20Aviador%20Enilton%20Franca
+      - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,%20-43.198931982933686&origem=Estrada da Cacuia, 226
 
 # Parâmetros Obrigatórios
    - **destino**: O código (ID) do local, endereço ou valor textual de latitude/longitude para o qual você deseja calcular as rotas. As opções para o parâmetro de destino são as mesmas do parâmetro de origem.
