@@ -14,13 +14,13 @@
 ### Para testar os endpoints
   - Quando o aplicativo estiver em execução, abra um navegador de sua escolha ou utilize o postman:
     - Somente latitude e longitude como ***destino*** e ***origem***:
-      - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,-43.198931982933686&origem=-22.803258699505523,-43.19535170838785
+      - http://localhost:8099/v1/geolocalizacao?origem=-22.803258699505523,-43.19535170838785&destino=-22.795896336641512,-43.198931982933686
     - Latitude e longitude para o ***destino*** e **endereço** para a ***origem***:  
-      - http://localhost:8099/v1/geolocalizacao?destino=-22.795896336641512,%20-43.198931982933686&origem=Estrada da Cacuia, 226
+      - http://localhost:8099/v1/geolocalizacao?origem=-22.803258699505523,-43.19535170838785&destino=Estrada da Cacuia, 226
 
 # Parâmetros Obrigatórios
-   - **destino**: O código (ID) do local, endereço ou valor textual de latitude/longitude para o qual você deseja calcular as rotas. As opções para o parâmetro de destino são as mesmas do parâmetro de origem.
    - **origem**: O código (ID) do local, endereço ou valor textual de latitude/longitude a partir do qual você deseja calcular as rotas.
+   - **destino**: O código (ID) do local, endereço ou valor textual de latitude/longitude para o qual você deseja calcular as rotas. As opções para o parâmetro de destino são as mesmas do parâmetro de origem.
 
 # Endpoints Existentes na API
   1. Obter rota: 
