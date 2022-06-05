@@ -1,4 +1,4 @@
-# geolocalizacao-api
+# Siga estas instruções para testar o aplicativo
 
 # Considerações
    - A aplicação está configurada para rodar na porta 8099.
