@@ -24,8 +24,8 @@
 
 # Endpoints Existentes na API
   1. Obter rota: 
-      - Utilizando latitude/longitude: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=latitude,longitude`
-      - Utilizando latitude/longitude e endereco: **[GET]** `http://localhost:8099/v1/geolocalizacao?destino=latitude,longitude&origem=endereco`
+      - Utilizando latitude/longitude: **[GET]** `http://localhost:8099/v1/geolocalizacao?origem=latitude,longitude&destino=latitude,longitude`
+      - Utilizando latitude/longitude e endereco: **[GET]** `http://localhost:8099/v1/geolocalizacao?origem=latitude,longitude&destino=endereco`
   > NOTA: O valor dos parâmetros **código (ID) do local, endereço ou valor textual de latitude/longitude** podem ser inseridos tanto para o parâmetro ***destino*** quanto para ***origem***, não tendo nenhum tipo de restrição quanto a ordem de utilização do valor dos parâmetros.
 
 # Tecnologias Utilizadas
