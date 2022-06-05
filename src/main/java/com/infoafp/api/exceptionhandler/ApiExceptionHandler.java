@@ -21,8 +21,8 @@ import lombok.extern.slf4j.Slf4j;
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
 	public static final String MSG_ERRO_GENERICA_USUARIO_FINAL = 
-			"Ocorreu um erro interno inesperado no sistema. Tente novamente e se "
-			+ "o problema persistir, entre em contato com o administrador do sistema.";
+			"Ocorreu um erro interno inesperado no sistema. Tente novamente e se " +
+			"o problema persistir, entre em contato com o administrador do sistema.";
 	
 	@Override
 	protected ResponseEntity<Object> handleHttpMediaTypeNotAcceptable(HttpMediaTypeNotAcceptableException ex,

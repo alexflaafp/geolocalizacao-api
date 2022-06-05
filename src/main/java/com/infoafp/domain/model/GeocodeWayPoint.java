@@ -11,7 +11,6 @@ public class GeocodeWayPoint {
 
 	@JsonProperty("geocoder_status")
 	private String geocoderStatus;
-	
 	@JsonProperty("place_id")
 	private String placeId;
 	

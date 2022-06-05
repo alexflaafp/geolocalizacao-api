@@ -11,7 +11,6 @@ public class Response {
 
 	@JsonProperty("geocoded_waypoints")
 	private GeocodeWayPoint[] geocodeWayPoint;
-	
 	@JsonProperty("routes")
 	private Route[] route;
 
